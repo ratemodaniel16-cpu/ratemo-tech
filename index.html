@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratemo Tech</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+<link rel="icon" type="image/x-icon" href="./ratemo-tech-favicon.ico">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    <div id="loader">
+    <h1>RATEMO TECH</h1>
+    <p>INNOVATING TODAY, BUILDING TOMORROW.</p>
+    <div class="loader-bar">
+        <div class="loader-progress"></div>
+    </div>
+    <span>LOADING...</span>
+</div>
+
+    <header>
+        <h1><span class="logo-mark">R</span> RATEMO TECH</h1>
+
+      <button id="menuToggle">☰</button>
+
+<nav id="navMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+
+    <button id="themeToggle">☀️ Light Mode</button>
+</nav> 
+    </header>
+
+    <section class="hero">
+       <h2>
+    Welcome to <span id="typing-text"></span><span class="cursor">|</span>
+</h2> 
+        <p>Exploring the future through technology and innovation.</p>
+        <button onclick="showMessage()">Explore More</button>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We believe in creativity, technology and innovation.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Web Development | Programming | Technology</p>
+    </section>
+
+<!-- PROJECTS SECTION -->
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <p>Explore some of my programming projects.</p>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <h3>Website Development</h3>
+            <p>My first website built using HTML, CSS and JavaScript.</p>
+            <span>HTML | CSS | JavaScript</span>
+         <a href="web-project.html" class="project-btn">View Project</a>   
+        </div>
+
+        <div class="project-card">
+            <h3>Python Programming</h3>
+            <p>Learning to build programs using Python.</p>
+            <span>Python</span>
+            <a href="#" class="project-btn">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>C++ Programming</h3>
+            <p>Exploring software development using C++.</p>
+            <span>C++</span>
+            <a href="#" class="project-btn">View Project</a>
+        </div>
+
+    </div>
+</section>
+<section id="stats">
+    <h2>Our Achievements</h2>
+    <p>Growing through technology and innovation.</p>
+
+    <div class="stats-container">
+
+        <div class="stat-box">
+            <h3 class="counter" data-target="5">0</h3>
+            <p>Projects</p>
+        </div>
+
+        <div class="stat-box">
+            <h3 class="counter" data-target="5">0</h3>
+            <p>Programming Languages</p>
+        </div>
+
+        <div class="stat-box">
+            <h3 class="counter" data-target="100">0</h3>
+            <p>Percent Passion</p>
+        </div>
+
+    </div>
+</section>
+
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Welcome to our technology journey!</p>
+    </section>
+
+   
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question? Send us a message.</p>
+    <p class="phone">
+    Phone:
+    <a href="tel:0745583097">0745583097</a>
+</p>
+
+
+ <form id="contactForm" action="https://formspree.io/f/xaeojabg" method="POST">
+
+    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+
+    <input type="text" id="subject" name="subject" placeholder="Message Subject" required>
+
+    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+    <button type="submit">Send Message 🚀</button>
+
+</form>
+
+<div id="successPopup">
+    <span>✓</span>
+    <p>Message sent successfully!</p>
+</div>   
+</section>
+
+<button id="topBtn" onclick="scrollToTop()">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
+<footer class="site-footer">
+    <h2>RATEMO TECH</h2>
+    <p>Innovating Today, Building Tomorrow.</p>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="social-links">
+    <a href="#" aria-label="Instagram">Instagram</a>
+    <a href="#" aria-label="GitHub">GitHub</a>
+    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+</div>
+
+    <p class="copyright">
+        © 2026 RATEMO TECH. All Rights Reserved.
+    </p>
+</footer>
+ 
