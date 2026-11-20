@@ -17,6 +17,14 @@ function scrollToTop() {
 console.log("Ratemo Tech website loaded successfully!");
 
 document.addEventListener("DOMContentLoaded", function() {
+    // SUPABASE DATABASE CONNECTION
+const SUPABASE_URL = "https://wpqjdacekmbpurlwqqty.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_KCrCChOGLRp6385kHyDuyA_6oN2zOuf.co";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+);
 
     // BACK TO TOP
     const topBtn = document.getElementById("topBtn");
@@ -165,40 +173,62 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // CONTACT FORM
-    const contactForm = document.getElementById("contactForm");
-    const successPopup = document.getElementById("successPopup");
+ 
+// CONTACT FORM - SUPABASE DATABASE
 
-    if (contactForm && successPopup) {
-        contactForm.addEventListener("submit", async function(event) {
-            event.preventDefault();
+const contactForm = document.getElementById("contactForm");
+const successPopup = document.getElementById("successPopup");
 
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: "POST",
-                    body: new FormData(contactForm),
-                    headers: {
-                        "Accept": "application/json"
+if (contactForm && successPopup) {
+
+    contactForm.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const formData = new FormData(contactForm);
+
+        const name = formData.get("name").trim();
+        const email = formData.get("email").trim();
+        const subject = formData.get("subject").trim();
+        const message = formData.get("message").trim();
+
+        try {
+
+            const { data, error } = await supabaseClient
+                .from("contact_messages")
+                .insert([
+                    {
+                        name: name,
+                        email: email,
+                        subject: subject,
+                        message: message
                     }
-                });
+                ]);
 
-                if (response.ok) {
-                    contactForm.reset();
-                    successPopup.classList.add("show");
-
-                    setTimeout(function() {
-                        successPopup.classList.remove("show");
-                    }, 4000);
-
-                } else {
-                    alert("Message could not be sent. Please try again.");
-                }
-
-            } catch (error) {
-                alert("Connection error. Please try again.");
+            if (error) {
+                console.error("Supabase error:", error);
+                alert("Message could not be saved. Please try again.");
+                return;
             }
-        });
-    }
+
+            contactForm.reset();
+
+            successPopup.classList.add("show");
+
+            setTimeout(function() {
+                successPopup.classList.remove("show");
+            }, 4000);
+
+        } catch (error) {
+
+            console.error("Connection error:", error);
+            alert("Connection error. Please try again.");
+
+        }
+
+    });
+
+}   
 
     // SCROLL REVEAL ANIMATION
 const revealElements = document.querySelectorAll(
