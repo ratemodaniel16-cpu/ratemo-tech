@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Ratemo Tech</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <h1>Ratemo Tech</h1>
+        <h2>Create Your Account</h2>
+
+        <p>Join Ratemo Tech today!</p>
+
+        <form id="signupForm">
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="Your Full Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Your Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="Create Password"
+                minlength="8"
+                required
+            >
+
+            <button type="submit">Create Account</button>
+
+        </form>
+
+        <p id="signupMessage"></p>
+
+        <p>
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+
+        <a href="index.html">Back to Home</a>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+
+</body>
+</html>
