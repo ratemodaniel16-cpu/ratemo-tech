@@ -4,7 +4,7 @@
 // ===================================
 
 const SUPABASE_URL = "https://wpqjdacekmbpurlwqqty.supabase.co";
-const SUPABASE_ANON_KEY = "https://wpqjdacekmbpurlwqqty.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndwcWpkYWNla21icHVybHdxcXR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUxNTEyMTUsImV4cCI6MjExMDcyNzIxNX0.ibTW51ExVmZjAke6KsbGgRPqcRpCFMZrnUFYXkBVoLo";
 
 const supabaseClient = window.supabase.createClient(
     SUPABASE_URL,
