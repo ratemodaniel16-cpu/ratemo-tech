@@ -133,3 +133,28 @@ if (userName && logoutButton) {
         window.location.href = "login.html";
     });
 }
+// PASSWORD RECOVERY REQUEST
+
+const forgotPasswordButton = document.getElementById("forgotPassword");
+
+if (forgotPasswordButton) {
+    forgotPasswordButton.addEventListener("click", async () => {
+        const email = document.getElementById("email").value;
+
+        if (!email) {
+            alert("Please enter your email first.");
+            return;
+        }
+
+        const { error } = await supabaseClient.auth
+            .resetPasswordForEmail(email, {
+                redirectTo: "https://ratemodaniel16-cpu.github.io/ratemo-tech/reset-password.html"
+            });
+
+        if (error) {
+            alert(error.message);
+        } else {
+            alert("Password recovery email sent!");
+        }
+    });
+}
