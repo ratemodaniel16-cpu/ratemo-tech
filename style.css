@@ -923,4 +923,71 @@ body.light-mode #contactForm textarea {
     box-shadow: 0 0 20px #008cff;
     transform: translateY(-5px);
 }
+
+/* RATEMO TECH Success Popup */
+#successPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 420px;
+    padding: 30px;
+    background: #080d1a;
+    border: 1px solid #008cff;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 140, 255, 0.35);
+    color: white;
+    text-align: center;
+    z-index: 9999;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #008cff;
+    color: white;
+    font-size: 38px;
+    line-height: 65px;
+}
+
+#successPopup h3 {
+    color: #008cff;
+    margin-bottom: 12px;
+}
+
+#successPopup p {
+    color: #d5dbea;
+    line-height: 1.6;
+}
+
+.success-tagline {
+    display: block;
+    margin-top: 20px;
+    color: #008cff;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+
+/* Show success popup */
+#successPopup.show {
+    display: block;
+    animation: popupAppear 0.4s ease forwards;
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
  
